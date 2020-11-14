@@ -5,9 +5,18 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTrainer.Android", "WordTrainer\WordTrainer.Android\WordTrainer.Android.csproj", "{9AE775BE-3240-46A9-9A88-4BD257FE0B77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTrainer", "WordTrainer\WordTrainer\WordTrainer.csproj", "{901ECBDA-F10A-4CDE-8CFD-8BB2EDADBBBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordTrainer", "WordTrainer\WordTrainer\WordTrainer.csproj", "{901ECBDA-F10A-4CDE-8CFD-8BB2EDADBBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTrainer.Backend", "WordTrainer.Backend\WordTrainer.Backend.csproj", "{15A2BD62-3C50-488E-9107-38DB2C8E0A40}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WordTrainer.Shared", "WordTrainer.Shared\WordTrainer.Shared.shproj", "{F981E6C0-E94C-44E5-9432-CDEB0B0C3D8C}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		WordTrainer.Shared\WordTrainer.Shared.projitems*{15a2bd62-3c50-488e-9107-38db2c8e0a40}*SharedItemsImports = 5
+		WordTrainer.Shared\WordTrainer.Shared.projitems*{901ecbda-f10a-4cde-8cfd-8bb2edadbbbd}*SharedItemsImports = 5
+		WordTrainer.Shared\WordTrainer.Shared.projitems*{f981e6c0-e94c-44e5-9432-cdeb0b0c3d8c}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -25,6 +34,10 @@ Global
 		{901ECBDA-F10A-4CDE-8CFD-8BB2EDADBBBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{901ECBDA-F10A-4CDE-8CFD-8BB2EDADBBBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{901ECBDA-F10A-4CDE-8CFD-8BB2EDADBBBD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{15A2BD62-3C50-488E-9107-38DB2C8E0A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15A2BD62-3C50-488E-9107-38DB2C8E0A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15A2BD62-3C50-488E-9107-38DB2C8E0A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15A2BD62-3C50-488E-9107-38DB2C8E0A40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,7 +21,27 @@ namespace WordTrainer
 
         private void GenerateButtons()
         {
-            _currentQuestion = _ws.NextQuestion();
+            _currentQuestion = null;
+
+            try
+            {
+                _currentQuestion = _ws.NextQuestion();
+
+            }
+            catch (Exception) { }
+
+
+            if (_currentQuestion?.Word == null || _currentQuestion?.Answer == null)
+            {
+                var serviceError = new Label { Text = "no data from service", FontSize = 10, HorizontalTextAlignment = TextAlignment.Center, TextColor = Color.Red };
+                var btn = new Button { Text = "refresh" };
+                btn.Clicked += OnNextButtonClicked;
+
+                selectWord.Children.Clear();
+                selectWord.Children.Add(serviceError);
+                selectWord.Children.Add(btn);
+                return;
+            }
 
             var word = new Label { Text = _currentQuestion.Word, FontSize = 20, HorizontalTextAlignment = TextAlignment.Center };
 
@@ -42,13 +62,13 @@ namespace WordTrainer
 
             selectWord.Children.Add(new Label { Text = "correct" });
 
-            foreach(var e in selectWord.Children)
+            foreach (var e in selectWord.Children)
             {
-                if(e is Button)
+                if (e is Button)
                 {
                     var btnWord = e as Button;
                     btnWord.IsEnabled = false;
-                    if(btnSelectedWord.Text == btnWord.Text)
+                    if (btnSelectedWord.Text == btnWord.Text)
                     {
                         btnWord.BackgroundColor = btnSelectedWord.Text == _currentQuestion.Answer ? Color.Green : Color.Red;
                     }
